@@ -2,8 +2,10 @@ package generic_collection;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CollectionExam {
 	
@@ -144,21 +146,64 @@ public class CollectionExam {
 //		System.out.println(priceMap.size());
 		
 		// Map에 동일한 키 있는지 확인
-		if (!priceMap.containsKey("LG Gram")) {
-			priceMap.put("LG Gram", 1_600_000);
+//		if (!priceMap.containsKey("LG Gram")) {
+//			priceMap.put("LG Gram", 1_600_000);
+//		}
+//		
+//		System.out.println(priceMap);
+//		System.out.println(priceMap.size());
+//		
+//		
+//		// Map 복사
+//		Map<String, Integer> priceMap2 = new HashMap<>();
+//		priceMap2.putAll(priceMap);
+//		
+//		System.out.println(priceMap2);
+//		System.out.println(priceMap2.size());
+		
+		/**
+		 * Set 실습
+		 */
+		Set<Integer> numbers = new HashSet<>();
+		
+		numbers.add(10);
+		numbers.add(20);
+		numbers.add(10);
+		numbers.add(30);
+		
+		// Set에 데이터 추가
+		System.out.println(numbers);
+		System.out.println(numbers.size()); // 중복데이터 안된다.
+		
+		// Set 데이터 조회 => Set은 Index로 접근하지 못한다.
+		
+		for(int n: numbers) {
+			System.out.println(n);
 		}
 		
-		System.out.println(priceMap);
-		System.out.println(priceMap.size());
+		// Set 데이터 삭제
+//		numbers.remove(10);
+//		System.out.println(numbers);
+//		System.out.println(numbers.size()); 
 		
+		// Set 데이터 모두 삭제
+//		numbers.clear();
+//		System.out.println(numbers);
+//		System.out.println(numbers.size()); 
 		
-		// Map 복사
-		Map<String, Integer> priceMap2 = new HashMap<>();
-		priceMap2.putAll(priceMap);
+		// Set에 동일한 값이 있는지 확인
+		if ( ! numbers.contains(20) ) {
+			numbers.add(20);
+		 }
+		System.out.println(numbers);
+		System.out.println(numbers.size());
 		
-		System.out.println(priceMap2);
-		System.out.println(priceMap2.size());
+		// Set 복사
+		Set<Integer> numbers2 = new HashSet<>();
 		
+		numbers2.addAll(numbers);
+		System.out.println(numbers2);
+		System.out.println(numbers2.size());
 	}
 
 }
