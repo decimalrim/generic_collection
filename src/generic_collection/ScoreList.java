@@ -1,5 +1,7 @@
 package generic_collection;
 
+import java.util.Arrays;
+
 public class ScoreList<T> {
 	
 	/**
@@ -63,9 +65,18 @@ public class ScoreList<T> {
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("ScoreList[");
+//		// Stream 으로 변경해보기
 		for (int i = 0; i < size; i++) { // 사이즈가 있는 만큼만 반복해라
 			sb.append(scoreArray[i] + ",");
 		}
+//		// Stream으로 변경 시작
+//		String items = Arrays.stream(this.scoreArray)
+//				 .filter(object -> object != null)
+//				 .map(object -> object + "")
+//				 .collect(Collectors.joining(", "));
+//		sb.append(items);
+//		// Stream으로 변경 끝
+		
 		sb.append("]");
 		
 		return sb.toString();
